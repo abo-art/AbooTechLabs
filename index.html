@@ -1,0 +1,2473 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ Primary SEO ═══ -->
+  <title>Aboo Tech Labs — Инженерная мысль. Доведенная до идеала.</title>
+  <meta name="description" content="Абылай — AI Engineer & Software Developer. Создаю умные LLM-агенты, Telegram-ботов, финтех-продукты и нативные приложения. Groq API · FastAPI · Swift · Python." />
+  <meta name="keywords" content="Aboo Tech Labs, Абылай, AI разработчик, LLM, Telegram бот, FastAPI, Python, Swift, iOS, Fintech, AbooPay, Livesport, Groq" />
+  <meta name="author" content="Абылай — Aboo Tech Labs" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://aboo-tech-labs.netlify.app/" />
+
+  <!-- ═══ Open Graph — Telegram · WhatsApp · iMessage · LinkedIn ═══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Aboo Tech Labs" />
+  <meta property="og:url" content="https://aboo-tech-labs.netlify.app/" />
+  <meta property="og:title" content="Aboo Tech Labs — Инженерная мысль. Доведенная до идеала." />
+  <meta property="og:description" content="Абылай — AI Engineer & Software Developer. LLM-агенты (Groq / Llama 3), Telegram-боты, финтех-лендинги и iOS-приложения. Умные продукты от идеи до продакшена." />
+  <meta property="og:image" content="https://aboo-tech-labs.netlify.app/assets/og-preview.png" />
+  <meta property="og:image:secure_url" content="https://aboo-tech-labs.netlify.app/assets/og-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Aboo Tech Labs — AI Engineer Portfolio Preview" />
+  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- ═══ Twitter / X Card ═══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@abo_tech_lab" />
+  <meta name="twitter:creator" content="@abo_tech_lab" />
+  <meta name="twitter:title" content="Aboo Tech Labs — Инженерная мысль. Доведенная до идеала." />
+  <meta name="twitter:description" content="AI Engineer & Developer. LLM-агенты, Telegram-боты, финтех и iOS. Умные продукты от идеи до продакшена." />
+  <meta name="twitter:image" content="https://aboo-tech-labs.netlify.app/assets/og-preview.png" />
+  <meta name="twitter:image:alt" content="Aboo Tech Labs Portfolio Preview" />
+
+  <!-- ═══ Apple / iOS Web App ═══ -->
+  <meta name="apple-mobile-web-app-title" content="Aboo Tech Labs" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="assets/logo.jpg" />
+
+  <!-- ═══ Favicon ═══ -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <link rel="shortcut icon" href="assets/logo.jpg" />
+
+  <!-- ═══ Schema.org — Google Rich Results ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Абылай",
+    "alternateName": "Aboo Tech Labs",
+    "description": "AI Engineer & Software Developer. LLM-агенты (Groq / Llama 3), Telegram-боты, финтех-продукты и iOS-приложения.",
+    "url": "https://aboo-tech-labs.netlify.app/",
+    "image": "https://aboo-tech-labs.netlify.app/assets/og-preview.png",
+    "sameAs": [
+      "https://www.instagram.com/abo_tech_lab",
+      "https://t.me/+cPwyWmMK0dg1Njdi",
+      "https://github.com/abo-art"
+    ],
+    "jobTitle": "AI Engineer & Software Developer",
+    "knowsAbout": ["Artificial Intelligence", "Machine Learning", "LLM", "FastAPI", "Python", "Swift", "iOS", "Telegram Bots", "Fintech", "Data Analytics"],
+    "worksFor": { "@type": "Organization", "name": "Aboo Tech Labs" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { 'apple-blue': '#2997FF' },
+          fontFamily: { sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: #000; color: #fff; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000000; color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: #000; }
+    ::-webkit-scrollbar-thumb { background: rgba(41,151,255,.35); border-radius: 10px; }
+
+    /* ── Apple Laser Scroll Progress Bar ── */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #2997FF 0%, #5aadff 50%, #99ccff 100%);
+      box-shadow: 0 0 10px rgba(41, 151, 255, 0.8), 0 0 20px rgba(41, 151, 255, 0.4);
+      z-index: 100;
+      pointer-events: none;
+      transition: width 0.08s linear;
+    }
+
+    .glass {
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: all .3s ease;
+    }
+    .glass:hover {
+      background: rgba(255,255,255,.055);
+      border-color: rgba(255,255,255,.15);
+    }
+    .glass-nav {
+      background: rgba(0,0,0,.72);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .glow-hero {
+      position: absolute; width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(41,151,255,.13) 0%, transparent 70%);
+      top: -200px; left: 50%; transform: translateX(-50%);
+      pointer-events: none; z-index: 0;
+    }
+    .glow-section {
+      position: absolute; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(41,151,255,.08) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .glow-contact {
+      position: absolute; inset: -80px;
+      background: radial-gradient(circle, rgba(41,151,255,.12) 0%, transparent 65%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .hero-title {
+      font-size: clamp(2.6rem, 6.5vw, 5.2rem);
+      font-weight: 800; letter-spacing: -.035em; line-height: 1.06;
+    }
+    .section-title {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 700; letter-spacing: -.03em; line-height: 1.1;
+    }
+    .label-text {
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px; height: 8px; background: #2997FF;
+      border-radius: 50%; box-shadow: 0 0 8px rgba(41,151,255,.9);
+      animation: pulse-dot 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { box-shadow: 0 0 6px rgba(41,151,255,.7); }
+      50% { box-shadow: 0 0 16px rgba(41,151,255,1), 0 0 32px rgba(41,151,255,.4); }
+    }
+
+    /* ── Apple Badge Specular Light Shimmer ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(41,151,255,.08); border: 1px solid rgba(41,151,255,.22);
+      color: #2997FF; padding: 6px 14px; border-radius: 999px;
+      font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      position: relative; overflow: hidden;
+    }
+    .badge::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -120%;
+      width: 50%; height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transform: rotate(30deg);
+      animation: badge-sweep 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+      pointer-events: none;
+    }
+    @keyframes badge-sweep {
+      0%, 75% { left: -120%; }
+      100% { left: 220%; }
+    }
+
+    /* ── Floating Zero-Gravity Hero Physics ── */
+    @keyframes hero-float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(0.35deg); }
+    }
+    @keyframes halo-breathe {
+      0%, 100% { transform: scale(1); opacity: 0.75; }
+      50% { transform: scale(1.14); opacity: 0.95; }
+    }
+    .animate-hero-float {
+      animation: hero-float 5s ease-in-out infinite;
+    }
+    .animate-halo-breathe {
+      animation: halo-breathe 5s ease-in-out infinite;
+    }
+
+    /* ── Tactile Interactive Buttons with Apple Spring Feel ── */
+    .btn-primary {
+      background: #2997FF; color: #000; font-weight: 600; font-size: .88rem;
+      padding: 13px 26px; border-radius: 999px; transition: all .25s cubic-bezier(0.16, 1, 0.3, 1);
+      letter-spacing: .01em; cursor: pointer; border: none;
+      display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: #5aadff; transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 32px rgba(41,151,255,.4);
+    }
+    .btn-primary:active {
+      transform: scale(0.96) translateY(0);
+      transition-duration: 0.08s;
+    }
+
+    .btn-ghost {
+      color: rgba(255,255,255,.75); font-weight: 500; font-size: .88rem;
+      padding: 13px 26px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14);
+      transition: all .25s cubic-bezier(0.16, 1, 0.3, 1); letter-spacing: .01em; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,.35); color: #fff;
+      transform: translateY(-2px) scale(1.01);
+      background: rgba(255,255,255,0.03);
+    }
+    .btn-ghost:active {
+      transform: scale(0.96) translateY(0);
+      transition-duration: 0.08s;
+    }
+
+    .btn-nav-pill {
+      background: rgba(41,151,255,.1); border: 1px solid rgba(41,151,255,.25);
+      color: #2997FF; font-size: .82rem; font-weight: 600; padding: 8px 18px;
+      border-radius: 999px; transition: all .25s cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none; display: inline-block;
+    }
+    .btn-nav-pill:hover {
+      background: rgba(41,151,255,.2); border-color: rgba(41,151,255,.55);
+      transform: translateY(-1px);
+      box-shadow: 0 0 16px rgba(41,151,255,0.3);
+    }
+    .btn-nav-pill:active { transform: scale(0.96); }
+
+    .nav-link {
+      color: rgba(255,255,255,.6); font-size: .85rem; font-weight: 500;
+      text-decoration: none; transition: color .2s, transform .2s; letter-spacing: .01em;
+      display: inline-block;
+    }
+    .nav-link:hover { color: #fff; transform: translateY(-1px); }
+
+    /* ── Spotlight Cursor Effect on Cards ── */
+    .spotlight-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .spotlight-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(41, 151, 255, 0.11), transparent 75%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .spotlight-card:hover::after {
+      opacity: 1;
+    }
+
+    .project-card {
+      background: rgba(255,255,255,.03); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px; padding: 34px 30px; transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative; overflow: hidden;
+      transform-style: preserve-3d;
+      will-change: transform, box-shadow;
+    }
+    .project-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(41,151,255,.5), transparent);
+      opacity: 0; transition: opacity .35s ease;
+    }
+    .project-card:hover {
+      background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.2);
+      transform: translateY(-5px);
+      box-shadow: 0 28px 70px rgba(0,0,0,.6), 0 0 45px rgba(41,151,255,.1);
+    }
+    .project-card:hover::before { opacity: 1; }
+
+    .philo-card {
+      background: rgba(255,255,255,.03); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px; padding: 36px 28px; transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .philo-card:hover {
+      background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.18);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 48px rgba(0,0,0,.5), 0 0 32px rgba(41,151,255,.06);
+    }
+
+    .stack-tag {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+      color: #94A3B8; font-size: .75rem; font-weight: 500; padding: 5px 12px;
+      border-radius: 6px; display: inline-block; transition: all .25s ease;
+      cursor: default;
+    }
+    .stack-tag:hover {
+      color: #2997FF; border-color: rgba(41,151,255,.35);
+      background: rgba(41,151,255,.08);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(41,151,255,0.18);
+    }
+
+    .stack-cell {
+      background: rgba(255,255,255,.03); backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px; padding: 28px 24px; transition: all .35s cubic-bezier(0.16, 1, 0.3, 1); text-align: center;
+      position: relative;
+    }
+    .stack-cell:hover {
+      background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.18);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0,0,0,.55), 0 0 28px rgba(41,151,255,.08);
+    }
+
+    /* ── Apple Glass Contact Card ── */
+    .contact-glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      text-decoration: none;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-glass-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(41, 151, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55), 0 0 32px rgba(41, 151, 255, 0.16);
+    }
+    .contact-glass-card:active {
+      transform: scale(0.98) translateY(-1px);
+    }
+
+    .contact-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(41, 151, 255, 0.08);
+      border: 1px solid rgba(41, 151, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2997FF;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    .contact-glass-card:hover .contact-icon-box {
+      background: rgba(41, 151, 255, 0.2);
+      border-color: rgba(41, 151, 255, 0.5);
+      box-shadow: 0 0 18px rgba(41, 151, 255, 0.35);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* ── Apple Portrait Showcase Frame ── */
+    .portrait-wrapper { position: relative; }
+    .portrait-glow {
+      position: absolute;
+      inset: -16px;
+      background: radial-gradient(circle, rgba(41, 151, 255, 0.24) 0%, rgba(41, 151, 255, 0.05) 50%, transparent 75%);
+      border-radius: 36px;
+      filter: blur(20px);
+      opacity: 0.75;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .portrait-wrapper:hover .portrait-glow { opacity: 1; }
+    .portrait-card {
+      background: rgba(255, 255, 255, 0.035);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      padding: 10px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 32px rgba(41, 151, 255, 0.08);
+    }
+    .portrait-card:hover {
+      border-color: rgba(41, 151, 255, 0.38);
+      transform: translateY(-5px);
+      box-shadow: 0 32px 85px rgba(0, 0, 0, 0.8), 0 0 48px rgba(41, 151, 255, 0.2);
+    }
+    .portrait-img-box {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 3 / 4;
+      background: #0d0d0d;
+    }
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .portrait-card:hover .portrait-img { transform: scale(1.045); }
+    .portrait-glass-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 65%, rgba(0,0,0,0.75) 100%);
+      pointer-events: none;
+    }
+    .portrait-floating-tag {
+      position: absolute;
+      bottom: 14px;
+      inset-x: 14px;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .portrait-card:hover .portrait-floating-tag {
+      transform: translateY(-2px);
+    }
+
+    section { padding-top: 120px; padding-bottom: 120px; }
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+      margin: 0 auto; max-width: 900px;
+    }
+    .icon-circle {
+      width: 52px; height: 52px; background: rgba(41,151,255,.1);
+      border: 1px solid rgba(41,151,255,.2); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 22px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .philo-card:hover .icon-circle {
+      transform: scale(1.08) rotate(2deg);
+      background: rgba(41,151,255,.18);
+    }
+    .proj-icon {
+      width: 48px; height: 48px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 0; font-size: 1.3rem; overflow: hidden;
+    }
+    #mobile-menu { display: none; }
+    #mobile-menu.open { display: flex; }
+
+    .feat-dot { width: 5px; height: 5px; background: #2997FF; border-radius: 50%; flex-shrink: 0; }
+    .feat-li { display: flex; align-items: center; gap: 10px; font-size: .82rem; color: #94A3B8; }
+    .proj-badge {
+      font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      color: #2997FF; background: rgba(41,151,255,.08); border: 1px solid rgba(41,151,255,.2);
+      padding: 5px 11px; border-radius: 999px;
+    }
+
+    /* Footer glass pill */
+    .footer-glass-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .footer-glass-pill:hover {
+      background: rgba(41, 151, 255, 0.12);
+      border-color: rgba(41, 151, 255, 0.4);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(41, 151, 255, 0.2);
+    }
+    .footer-glass-pill:active { transform: scale(0.96); }
+
+    .grid-overlay {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none; z-index: 0;
+    }
+
+    /* Modal styles */
+    .modal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.25);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .modal-dot.active {
+      width: 24px;
+      background: #2997FF;
+      box-shadow: 0 0 10px rgba(41, 151, 255, 0.7);
+    }
+
+    /* External Web Link Button */
+    .btn-web-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(41, 151, 255, 0.1);
+      border: 1px solid rgba(41, 151, 255, 0.28);
+      color: #2997FF;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 15px rgba(41, 151, 255, 0.1);
+    }
+    .btn-web-pill:hover {
+      background: #2997FF;
+      border-color: #2997FF;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(41, 151, 255, 0.45);
+    }
+    /* ── Infinite Spotlight Mask Marquee ── */
+    .ticker-section {
+      position: relative;
+      width: 100%;
+      padding: 30px 0;
+      background: #000000;
+      overflow: hidden;
+      user-select: none;
+      --ticker-x: 50%;
+    }
+
+    .spotlight-beam {
+      position: absolute;
+      top: 50%;
+      left: var(--ticker-x, 50%);
+      transform: translate(-50%, -50%);
+      width: 580px;
+      height: 120px;
+      background: radial-gradient(ellipse at center, rgba(41, 151, 255, 0.38) 0%, rgba(41, 151, 255, 0.12) 42%, rgba(255, 255, 255, 0.04) 62%, transparent 75%);
+      filter: blur(34px);
+      pointer-events: none;
+      z-index: 1;
+      will-change: left;
+    }
+
+    .ticker-mask-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 22%, black 78%, rgba(0,0,0,0.4) 90%, transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 10%, black 22%, black 78%, rgba(0,0,0,0.4) 90%, transparent 100%);
+      cursor: crosshair;
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      will-change: transform;
+      animation: marquee-slide 38s linear infinite;
+    }
+
+    .ticker-mask-wrapper:hover .ticker-track {
+      animation-play-state: paused;
+    }
+
+    .ticker-track-dim {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ticker-track-lit {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: max-content;
+      pointer-events: none;
+      z-index: 3;
+      -webkit-mask-image: radial-gradient(ellipse 340px 95px at var(--ticker-x, 50%) 50%, black 0%, rgba(0,0,0,0.9) 40%, transparent 100%);
+      mask-image: radial-gradient(ellipse 340px 95px at var(--ticker-x, 50%) 50%, black 0%, rgba(0,0,0,0.9) 40%, transparent 100%);
+      will-change: mask-image, -webkit-mask-image;
+    }
+
+    @keyframes marquee-slide {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
+    }
+
+    .ticker-group {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding-right: 3rem;
+      flex-shrink: 0;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      white-space: nowrap;
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 768px) {
+      .ticker-item {
+        font-size: 0.94rem;
+        letter-spacing: 0.15em;
+      }
+    }
+
+    /* Dim track styling */
+    .ticker-track-dim .ticker-item {
+      color: rgba(255, 255, 255, 0.22);
+    }
+    .ticker-track-dim .ticker-glyph {
+      color: rgba(41, 151, 255, 0.45);
+      font-size: 0.75rem;
+    }
+    .ticker-track-dim .ticker-tag {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      color: rgba(255, 255, 255, 0.35);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    /* Lit track styling */
+    .ticker-track-lit .ticker-item {
+      color: #ffffff;
+      text-shadow: 0 0 16px rgba(41, 151, 255, 0.8), 0 0 32px rgba(41, 151, 255, 0.4);
+      font-weight: 700;
+    }
+    .ticker-track-lit .ticker-glyph {
+      color: #2997FF;
+      filter: drop-shadow(0 0 10px #2997FF);
+      font-size: 0.75rem;
+    }
+    .ticker-track-lit .ticker-tag {
+      background: rgba(41, 151, 255, 0.16);
+      border: 1px solid rgba(41, 151, 255, 0.45);
+      color: #2997FF;
+      box-shadow: 0 0 14px rgba(41, 151, 255, 0.35);
+      padding: 3px 9px;
+      border-radius: 6px;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+    /* ── macOS AI & Code Playground ── */
+    .lab-window {
+      background: rgba(10, 11, 16, 0.85);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 50px rgba(41, 151, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .lab-window:hover {
+      border-color: rgba(41, 151, 255, 0.35);
+      box-shadow: 0 35px 110px rgba(0, 0, 0, 0.95), 0 0 70px rgba(41, 151, 255, 0.18);
+    }
+
+    .lab-header {
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .mac-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .mac-dot:hover { transform: scale(1.15); }
+    .mac-dot-close { background: #FF5F56; box-shadow: 0 0 6px rgba(255,95,86,0.4); }
+    .mac-dot-min { background: #FFBD2E; box-shadow: 0 0 6px rgba(255,189,46,0.4); }
+    .mac-dot-zoom { background: #27C93F; box-shadow: 0 0 6px rgba(39,201,63,0.4); }
+
+    .lab-tab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94A3B8;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 7px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .lab-tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+    .lab-tab-btn.active {
+      color: #fff;
+      background: rgba(41, 151, 255, 0.16);
+      border-color: rgba(41, 151, 255, 0.45);
+      box-shadow: 0 0 16px rgba(41, 151, 255, 0.25);
+    }
+
+    .terminal-body {
+      background: #050608;
+      padding: 20px 22px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #E2E8F0;
+      min-height: 340px;
+      max-height: 420px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+    .terminal-body::-webkit-scrollbar { width: 4px; }
+    .terminal-body::-webkit-scrollbar-track { background: #050608; }
+    .terminal-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 4px; }
+
+    .terminal-cursor {
+      display: inline-block;
+      width: 7px;
+      height: 14px;
+      background: #2997FF;
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink-cursor 1s infinite;
+      box-shadow: 0 0 8px #2997FF;
+    }
+    @keyframes blink-cursor {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .preset-chip {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94A3B8;
+      font-size: 0.72rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      white-space: nowrap;
+    }
+    .preset-chip:hover {
+      background: rgba(41, 151, 255, 0.12);
+      border-color: rgba(41, 151, 255, 0.4);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(41, 151, 255, 0.15);
+    }
+    .preset-chip:active {
+      transform: scale(0.97);
+    }
+
+    .hud-stat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: #94A3B8;
+    }
+    .hud-stat-val {
+      color: #fff;
+      font-weight: 600;
+      font-family: ui-monospace, monospace;
+    }
+
+    /* ── Floating Back to Top Button ── */
+    #back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      background: rgba(18, 18, 24, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px) scale(0.9);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(41, 151, 255, 0.15);
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    #back-to-top:hover {
+      background: rgba(41, 151, 255, 0.2);
+      border-color: rgba(41, 151, 255, 0.5);
+      color: #2997FF;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 28px rgba(41, 151, 255, 0.35);
+    }
+    #back-to-top:active { transform: scale(0.95); }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════ SCROLL PROGRESS ═══════════════════ -->
+<div id="scroll-progress"></div>
+
+<!-- ═══════════════════ HEADER ═══════════════════ -->
+<header class="fixed top-0 inset-x-0 z-50 glass-nav">
+  <nav class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+    <!-- Brand link with iOS squircle icon & status dot -->
+    <a href="#home" class="flex items-center gap-3 group" style="text-decoration:none">
+      <div class="relative flex items-center justify-center">
+        <img 
+          src="assets/logo.jpg" 
+          alt="Aboo tech labs logo" 
+          class="w-7 h-7 sm:w-8 sm:h-8 rounded-[8px] sm:rounded-[9px] object-cover border border-white/15 shadow-[0_0_12px_rgba(41,151,255,0.25)] group-hover:border-[rgba(41,151,255,0.5)] group-hover:scale-105 transition-all duration-300" 
+        />
+        <div class="status-dot absolute -top-0.5 -right-0.5" style="width:7px;height:7px;"></div>
+      </div>
+      <span style="font-size:.92rem;font-weight:700;letter-spacing:-.01em;color:#fff">Aboo <span style="color:#2997FF">tech labs</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#about" class="nav-link">Обо мне</a>
+      <a href="#lab" class="nav-link">Лаборатория</a>
+      <a href="#portfolio" class="nav-link">Портфолио</a>
+      <a href="#stack" class="nav-link">Стек</a>
+      <a href="#contact" class="nav-link">Контакты</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="#contact" class="btn-nav-pill hidden md:inline-block">Связаться</a>
+      <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Меню">
+        <span class="block w-5 h-0.5 rounded" id="hb1" style="background:rgba(255,255,255,.7);transition:all .2s"></span>
+        <span class="block w-5 h-0.5 rounded" id="hb2" style="background:rgba(255,255,255,.7);transition:all .2s"></span>
+        <span class="block w-5 h-0.5 rounded" id="hb3" style="background:rgba(255,255,255,.7);transition:all .2s"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="md:hidden flex-col px-6 pb-5 pt-2 gap-4 glass-nav border-t" style="border-color:rgba(255,255,255,.05)">
+    <a href="#about" class="nav-link text-sm py-1" onclick="closeMobileMenu()">Обо мне</a>
+    <a href="#lab" class="nav-link text-sm py-1" onclick="closeMobileMenu()">Лаборатория</a>
+    <a href="#portfolio" class="nav-link text-sm py-1" onclick="closeMobileMenu()">Портфолио</a>
+    <a href="#stack" class="nav-link text-sm py-1" onclick="closeMobileMenu()">Стек</a>
+    <a href="#contact" class="nav-link text-sm py-1" onclick="closeMobileMenu()">Контакты</a>
+    <a href="#contact" class="btn-nav-pill self-start mt-1" onclick="closeMobileMenu()">Связаться</a>
+  </div>
+</header>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-14">
+  <div class="glow-hero"></div>
+  <div class="grid-overlay"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6">
+    
+    <!-- Badge with Apple Specular Shimmer -->
+    <div class="flex justify-center mb-6">
+      <div class="badge">
+        <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#2997FF"/></svg>
+        Искусственный интеллект и разработка
+      </div>
+    </div>
+
+    <!-- Floating Hero Icon with Apple Blue Ambient Halo -->
+    <div class="flex justify-center mb-8">
+      <div class="relative group animate-hero-float">
+        <!-- Soft-glowing radial ambient halo with breathing animation -->
+        <div class="absolute -inset-6 bg-[radial-gradient(circle,rgba(41,151,255,0.45)_0%,rgba(41,151,255,0.12)_50%,transparent_75%)] rounded-full blur-2xl animate-halo-breathe pointer-events-none"></div>
+
+        <!-- Secondary soft backlight -->
+        <div class="absolute -inset-2 bg-[radial-gradient(circle_at_top,rgba(41,151,255,0.35)_0%,transparent_70%)] blur-md pointer-events-none"></div>
+
+        <!-- Apple Squircle Icon Box -->
+        <div class="relative w-18 h-18 sm:w-20 sm:h-20 rounded-[20px] sm:rounded-[24px] p-2 bg-[rgba(255,255,255,0.04)] backdrop-blur-2xl border border-[rgba(255,255,255,0.18)] shadow-[0_20px_50px_rgba(0,0,0,0.85),0_0_35px_rgba(41,151,255,0.28)] flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:scale-105 group-hover:border-[rgba(41,151,255,0.55)] group-hover:shadow-[0_25px_65px_rgba(0,0,0,0.95),0_0_55px_rgba(41,151,255,0.45)]">
+          <img src="assets/logo.jpg" alt="Aboo Tech Labs Icon" class="w-full h-full object-cover rounded-[15px] sm:rounded-[18px]" />
+          <!-- Apple Glass Top Specular Sheen -->
+          <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none rounded-[20px] sm:rounded-[24px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="hero-title text-white mb-6">
+      Инженерная мысль.<br/>
+      <span style="background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Доведенная до идеала.</span>
+    </h1>
+    <p style="font-size:clamp(1rem,2vw,1.2rem);color:#94A3B8;max-width:580px;margin:0 auto 44px;line-height:1.65;font-weight:400">
+      Высокопроизводительные AI-решения, умные боты на базе LLM и современные веб-интерфейсы — от идеи до продакшена.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a href="#portfolio" class="btn-primary">Смотреть работы</a>
+      <a href="#about" class="btn-ghost">Обо мне</a>
+    </div>
+    <div class="mt-20 flex justify-center" style="opacity:.3">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+        <span style="font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#94A3B8">Scroll</span>
+        <svg width="14" height="20" viewBox="0 0 14 20" fill="none">
+          <rect x=".5" y=".5" width="13" height="19" rx="6.5" stroke="rgba(255,255,255,.25)"/>
+          <rect x="5.5" y="3" width="3" height="5" rx="1.5" fill="rgba(255,255,255,.4)">
+            <animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0" dur="2s" repeatCount="indefinite"/>
+          </rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SPOTLIGHT TICKER (INFINITE MARQUEE) ═══════════════════ -->
+<div class="divider"></div>
+<section id="spotlight-ticker" class="ticker-section" aria-label="Технологический стек и специализация">
+  <!-- Volumetric Ambient Spotlight Beam -->
+  <div class="spotlight-beam" id="ticker-beam"></div>
+
+  <!-- Marquee Container with edge dissolve mask -->
+  <div class="ticker-mask-wrapper">
+    <!-- Dim Base Layer -->
+    <div class="ticker-track ticker-track-dim" aria-hidden="true">
+      <div class="ticker-group">
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Artificial Intelligence</span><span class="ticker-tag">AI Lab</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Data Analytics &amp; ML</span><span class="ticker-tag">Insights</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Autonomous LLM Agents</span><span class="ticker-tag">Groq API</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Telegram Bot Architecture</span><span class="ticker-tag">High-Load</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>FastAPI &amp; Async Backend</span><span class="ticker-tag">Python</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Human-Crafted UI / UX</span><span class="ticker-tag">Apple HIG</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Swift &amp; Native Apps</span><span class="ticker-tag">iOS</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Fintech Systems &amp; Audit</span><span class="ticker-tag">AbooPay</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Real-Time Streaming &amp; APIs</span><span class="ticker-tag">Livesport</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Neural Networks &amp; Pipelines</span><span class="ticker-tag">Models</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Ultra-Clean Architecture</span><span class="ticker-tag">Zero Bloat</span></div>
+      </div>
+      <div class="ticker-group">
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Artificial Intelligence</span><span class="ticker-tag">AI Lab</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Data Analytics &amp; ML</span><span class="ticker-tag">Insights</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Autonomous LLM Agents</span><span class="ticker-tag">Groq API</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Telegram Bot Architecture</span><span class="ticker-tag">High-Load</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>FastAPI &amp; Async Backend</span><span class="ticker-tag">Python</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Human-Crafted UI / UX</span><span class="ticker-tag">Apple HIG</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Swift &amp; Native Apps</span><span class="ticker-tag">iOS</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Fintech Systems &amp; Audit</span><span class="ticker-tag">AbooPay</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Real-Time Streaming &amp; APIs</span><span class="ticker-tag">Livesport</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Neural Networks &amp; Pipelines</span><span class="ticker-tag">Models</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Ultra-Clean Architecture</span><span class="ticker-tag">Zero Bloat</span></div>
+      </div>
+    </div>
+
+    <!-- Bright Illuminated Spotlight Layer (Identical Sync Track with Mask) -->
+    <div class="ticker-track ticker-track-lit" id="ticker-lit-track">
+      <div class="ticker-group">
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Artificial Intelligence</span><span class="ticker-tag">AI Lab</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Data Analytics &amp; ML</span><span class="ticker-tag">Insights</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Autonomous LLM Agents</span><span class="ticker-tag">Groq API</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Telegram Bot Architecture</span><span class="ticker-tag">High-Load</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>FastAPI &amp; Async Backend</span><span class="ticker-tag">Python</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Human-Crafted UI / UX</span><span class="ticker-tag">Apple HIG</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Swift &amp; Native Apps</span><span class="ticker-tag">iOS</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Fintech Systems &amp; Audit</span><span class="ticker-tag">AbooPay</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Real-Time Streaming &amp; APIs</span><span class="ticker-tag">Livesport</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Neural Networks &amp; Pipelines</span><span class="ticker-tag">Models</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Ultra-Clean Architecture</span><span class="ticker-tag">Zero Bloat</span></div>
+      </div>
+      <div class="ticker-group">
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Artificial Intelligence</span><span class="ticker-tag">AI Lab</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Data Analytics &amp; ML</span><span class="ticker-tag">Insights</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Autonomous LLM Agents</span><span class="ticker-tag">Groq API</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Telegram Bot Architecture</span><span class="ticker-tag">High-Load</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>FastAPI &amp; Async Backend</span><span class="ticker-tag">Python</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Human-Crafted UI / UX</span><span class="ticker-tag">Apple HIG</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Swift &amp; Native Apps</span><span class="ticker-tag">iOS</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Fintech Systems &amp; Audit</span><span class="ticker-tag">AbooPay</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Real-Time Streaming &amp; APIs</span><span class="ticker-tag">Livesport</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Neural Networks &amp; Pipelines</span><span class="ticker-tag">Models</span></div>
+        <div class="ticker-item"><span class="ticker-glyph">✦</span><span>Ultra-Clean Architecture</span><span class="ticker-tag">Zero Bloat</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- ═══════════════════ ABOUT ═══════════════════ -->
+<section id="about" class="relative overflow-hidden">
+  <div class="glow-section" style="right:-200px;top:50%;transform:translateY(-50%)"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+    <!-- Bio introduction block with photo -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-20">
+
+      <!-- Left: Apple Glass Portrait Card with Spotlight -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-start">
+        <div class="portrait-wrapper">
+          <div class="portrait-glow"></div>
+          <div class="portrait-card spotlight-card">
+            <div class="portrait-img-box">
+              <img 
+                src="assets/abylay.jpg" 
+                alt="Абылай — Software Engineer &amp; AI Researcher" 
+                class="portrait-img"
+              />
+              <div class="portrait-glass-overlay"></div>
+              <div class="portrait-floating-tag">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#2997FF] shadow-[0_0_8px_#2997FF]"></span>
+                  <span class="text-[0.75rem] font-bold text-white tracking-tight">Aboo Tech Labs</span>
+                </div>
+                <span class="text-[0.68rem] text-[#2997FF] font-semibold tracking-wider uppercase">Founder &amp; Dev</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Text & Bio Content -->
+      <div class="lg:col-span-7">
+        <div class="label-text" style="color:#2997FF;margin-bottom:14px">Обо мне</div>
+        <h2 class="section-title text-white" style="line-height:1.12;margin-bottom:20px;">
+          Привет, я <span style="background:linear-gradient(135deg,#fff 0%,#2997FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Абылай</span>.
+        </h2>
+        <p style="font-size:clamp(1.02rem,1.8vw,1.18rem);color:#94A3B8;line-height:1.75;font-weight:400;margin-bottom:18px;">
+          Разработчик и исследователь в области ИИ (<span class="text-white font-medium">Artificial Intelligence &amp; Data Analytics</span>). Создаю умные цифровые продукты, Telegram-ботов и софт — объединяя строгую математику, машинное обучение и бескомпромиссную чистоту кода.
+        </p>
+        <p style="font-size:0.92rem;color:#94A3B8;line-height:1.7;margin-bottom:28px;">
+          Мой фокус — превращать сложные архитектурные задачи в элегантные, быстрые решения: от нейросетевых интеграций и асинхронных backend-сервисов до нативных интерфейсов в духе Apple.
+        </p>
+
+        <!-- Skill tags -->
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="stack-tag" style="padding:6px 14px;color:#fff;border-color:rgba(41,151,255,0.3);background:rgba(41,151,255,0.08);">⚡ AI &amp; LLM Engineering</span>
+          <span class="stack-tag" style="padding:6px 14px;color:#fff;border-color:rgba(255,255,255,0.12);">🐍 Python &amp; FastAPI</span>
+          <span class="stack-tag" style="padding:6px 14px;color:#fff;border-color:rgba(255,255,255,0.12);">📱 Swift &amp; Mobile</span>
+          <span class="stack-tag" style="padding:6px 14px;color:#fff;border-color:rgba(255,255,255,0.12);">✨ Human-Crafted UI</span>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="https://www.instagram.com/abo_tech_lab?stkn=MWN5MDNxbGV1dm5taA%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="btn-primary" style="padding:11px 22px;font-size:0.84rem;">
+            Написать в Direct
+          </a>
+          <a href="#portfolio" class="btn-ghost" style="padding:11px 22px;font-size:0.84rem;">
+            Смотреть проекты
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Philosophy principles cards with Spotlight -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <div class="philo-card spotlight-card">
+        <div class="icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2997FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+          </svg>
+        </div>
+        <div class="label-text" style="color:#2997FF;margin-bottom:10px">01</div>
+        <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.02em">AI &amp; Analytics</h3>
+        <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Интеграция LLM через Groq API, построение автономных агентов и аналитических пайплайнов. Данные как фундамент интеллектуальных решений.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="stack-tag">Groq API</span><span class="stack-tag">LLMs</span><span class="stack-tag">Data Analytics</span>
+        </div>
+      </div>
+
+      <div class="philo-card spotlight-card">
+        <div class="icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2997FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <div class="label-text" style="color:#2997FF;margin-bottom:10px">02</div>
+        <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.02em">Чистый код</h3>
+        <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Архитектура, которая масштабируется без трения. Код, читаемый как проза. Python, Swift, JavaScript — каждый инструмент решает свою задачу.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="stack-tag">Python</span><span class="stack-tag">Swift</span><span class="stack-tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="philo-card spotlight-card">
+        <div class="icon-circle">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2997FF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/>
+          </svg>
+        </div>
+        <div class="label-text" style="color:#2997FF;margin-bottom:10px">03</div>
+        <h3 style="font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-.02em">UI/UX Эстетика</h3>
+        <p style="font-size:.875rem;color:#94A3B8;line-height:1.65">Интерфейсы, которые восхищают с первого касания. Строгая геометрия, выверенная типографика и глубина стекла в духе Apple.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="stack-tag">Figma</span><span class="stack-tag">Tailwind</span><span class="stack-tag">Glassmorphism</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ LAB / PLAYGROUND ═══════════════════ -->
+<div class="divider"></div>
+<section id="lab" class="relative overflow-hidden">
+  <div class="glow-section" style="left:50%;top:30%;transform:translate(-50%,-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(41,151,255,0.08) 0%,transparent 70%);"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="label-text" style="color:#2997FF;margin-bottom:12px">Интерактивный полигон</div>
+      <h2 class="section-title text-white mb-4">
+        Лаборатория интеллекта.<br/>
+        <span style="background:linear-gradient(135deg,#fff 0%,#2997FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Код, который думает.</span>
+      </h2>
+      <p style="font-size:0.95rem;color:#94A3B8;line-height:1.65">
+        Протестируйте архитектурные модули в реальном времени. Высокоскоростной инференс LLM, событийно-ориентированные боты и математическая аналитика.
+      </p>
+    </div>
+
+    <!-- macOS Glass Terminal Window -->
+    <div class="lab-window max-w-4xl mx-auto spotlight-card">
+      <!-- Window Title Bar -->
+      <div class="lab-header">
+        <div class="flex items-center gap-2">
+          <span class="mac-dot mac-dot-close" title="Закрыть"></span>
+          <span class="mac-dot mac-dot-min" title="Свернуть"></span>
+          <span class="mac-dot mac-dot-zoom" title="Развернуть"></span>
+          <span class="ml-3 text-[0.74rem] text-white/50 font-mono hidden sm:inline" id="terminal-window-title">~/aboo-lab/ai_agent.py — Groq LPU Llama-3-70B</span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2 bg-white/[0.04] border border-white/10 px-2.5 py-1 rounded-full text-[0.68rem] text-white/80">
+            <span class="w-2 h-2 rounded-full bg-[#2997FF] shadow-[0_0_8px_#2997FF] animate-pulse"></span>
+            <span class="font-mono text-[0.65rem] text-[#2997FF] font-semibold uppercase tracking-wider">Groq LPU Online</span>
+          </div>
+          <button id="copy-terminal-btn" class="text-[0.72rem] text-white/50 hover:text-white transition-colors flex items-center gap-1.5 px-2 py-1 rounded hover:bg-white/5" title="Скопировать лог">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="copy-btn-text" class="hidden sm:inline">Копировать</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Segmented Tab Controls -->
+      <div class="px-5 py-3 border-b border-white/[0.06] bg-black/40 flex items-center gap-2 overflow-x-auto">
+        <button class="lab-tab-btn active" data-tab="ai-agent">
+          <span>✦</span>
+          <span>AI Neural Agent</span>
+        </button>
+        <button class="lab-tab-btn" data-tab="tg-engine">
+          <span>⚡</span>
+          <span>Telegram Bot Engine</span>
+        </button>
+        <button class="lab-tab-btn" data-tab="analytics">
+          <span>📊</span>
+          <span>Data Analytics Pipeline</span>
+        </button>
+      </div>
+
+      <!-- Quick Preset Actions Bar -->
+      <div class="px-5 py-2.5 border-b border-white/[0.04] bg-white/[0.015] flex items-center gap-2 overflow-x-auto" id="terminal-presets">
+        <!-- Preset chips injected dynamically based on active tab -->
+      </div>
+
+      <!-- Terminal Output Screen -->
+      <div class="terminal-body" id="terminal-screen" aria-live="polite">
+        <!-- Live terminal lines will render here -->
+      </div>
+
+      <!-- Interactive Input Bar -->
+      <div class="p-3.5 border-t border-white/[0.08] bg-black/60 flex items-center gap-3">
+        <span class="font-mono text-[#2997FF] font-semibold text-[0.85rem] select-none pl-2">aboo@labs:~$</span>
+        <input 
+          type="text" 
+          id="terminal-input" 
+          class="flex-1 bg-transparent border-0 text-white placeholder-white/30 text-[0.82rem] font-mono focus:outline-none focus:ring-0" 
+          placeholder="Введите вопрос или выберите команду выше (Enter для запуска)..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button 
+          id="terminal-run-btn" 
+          class="btn-primary" 
+          style="padding: 7px 16px; font-size: 0.78rem; border-radius: 8px;"
+        >
+          <span>Запустить</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Bottom Hardware Performance HUD -->
+      <div class="px-5 py-2.5 border-t border-white/[0.05] bg-black/80 flex flex-wrap items-center justify-between gap-4 text-[0.7rem]">
+        <div class="flex items-center gap-5 flex-wrap">
+          <div class="hud-stat">
+            <span class="text-white/40">Latency:</span>
+            <span class="hud-stat-val text-[#2997FF]" id="hud-latency">14.6 ms</span>
+          </div>
+          <div class="hud-stat">
+            <span class="text-white/40">Throughput:</span>
+            <span class="hud-stat-val text-emerald-400" id="hud-throughput">518 tok/s</span>
+          </div>
+          <div class="hud-stat hidden sm:flex">
+            <span class="text-white/40">Engine:</span>
+            <span class="hud-stat-val" id="hud-engine">FastAPI Async / Llama-3-70B</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]"></span>
+          <span class="text-white/50 font-mono text-[0.68rem]" id="hud-status">Status: 200 OK (0.015s)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ PORTFOLIO ═══════════════════ -->
+<section id="portfolio" class="relative overflow-hidden">
+  <div class="glow-section" style="left:-200px;top:30%"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="mb-16">
+      <div class="label-text" style="color:#2997FF;margin-bottom:14px">Портфолио</div>
+      <h2 class="section-title text-white" style="max-width:460px">Ключевые проекты.</h2>
+      <p style="font-size:.95rem;color:#94A3B8;margin-top:14px;max-width:480px;line-height:1.65">
+        Каждый проект — это законченное инженерное решение с акцентом на скорость, точность и эргономику.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Project 1: Livesport (Interactive Card with Spotlight & Modal) -->
+      <div class="project-card spotlight-card cursor-pointer group" onclick="openLivesportModal()">
+        <div class="flex items-start justify-between mb-6">
+          <div class="flex items-center gap-3.5">
+            <div class="proj-icon rounded-xl border border-white/10 shadow-lg group-hover:scale-105 transition-transform duration-300">
+              <img src="assets/livesport/icon.jpg" alt="Livesport" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 style="font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:2px;letter-spacing:-.025em">Livesport</h3>
+              <span style="font-size:0.75rem;color:#94A3B8;">Web &amp; Mobile Platform</span>
+            </div>
+          </div>
+          <span class="proj-badge">Sports &amp; Streaming</span>
+        </div>
+
+        <p style="font-size:.875rem;color:#94A3B8;line-height:1.65;margin-bottom:24px">
+          Платформа и сервисы для отслеживания спортивных событий, трансляций, расписания матчей и аналитики спортивных результатов в реальном времени.
+        </p>
+
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px">
+          <li class="feat-li"><span class="feat-dot"></span>Стриминг и live-данные матчей без задержек</li>
+          <li class="feat-li"><span class="feat-dot"></span>Турнирные сетки, подробная статистика и составы команд</li>
+          <li class="feat-li"><span class="feat-dot"></span>Премиальный темный UI/UX, оптимизированный под mobile</li>
+        </ul>
+
+        <div class="flex flex-wrap gap-2 mb-7">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Frontend</span>
+          <span class="stack-tag">APIs</span>
+          <span class="stack-tag">UI/UX Design</span>
+        </div>
+
+        <!-- Interactive bottom trigger -->
+        <div class="flex items-center justify-between pt-5" style="border-top:1px solid rgba(255,255,255,.06)">
+          <div class="flex items-center gap-2 text-[0.82rem] font-semibold text-[#2997FF] group-hover:text-[#5aadff] transition-colors">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Смотреть интерфейс (5 экранов)</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-[#2997FF] group-hover:text-black group-hover:border-[#2997FF] transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: AbooPay (Interactive Card with Spotlight & Modal) -->
+      <div class="project-card spotlight-card cursor-pointer group" onclick="openAbooPayModal()">
+        <div class="flex items-start justify-between mb-5">
+          <div class="flex items-center gap-3.5">
+            <div class="proj-icon rounded-xl border border-white/10 shadow-lg group-hover:scale-105 transition-transform duration-300">
+              <img src="assets/aboopay/icon.jpg" alt="AbooPay" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 style="font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:2px;letter-spacing:-.025em">AbooPay</h3>
+              <span style="font-size:0.75rem;color:#94A3B8;">Web &amp; iOS</span>
+            </div>
+          </div>
+          <span class="proj-badge">Fintech · Calculator</span>
+        </div>
+
+        <p style="font-size:.875rem;color:#94A3B8;line-height:1.65;margin-bottom:18px">
+          Специализированное финтех-приложение и интерактивный сервисный лендинг для точного расчета заработной платы, налоговых отчислений и детальной финансовой аналитики с адаптивным интерфейсом.
+        </p>
+
+        <!-- External Web Version Button in Apple style -->
+        <div class="mb-5">
+          <a href="https://aboopay.netlify.app/" target="_blank" rel="noopener" onclick="event.stopPropagation()" class="btn-web-pill">
+            <span>Открыть веб-версию</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        </div>
+
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:9px">
+          <li class="feat-li"><span class="feat-dot"></span>Точный расчёт оклада, бонусов, налогов и чистой выплаты</li>
+          <li class="feat-li"><span class="feat-dot"></span>Встроенный ИИ-модуль AbooAI для мгновенного финансового аудита</li>
+          <li class="feat-li"><span class="feat-dot"></span>Нативное iOS-приложение и веб-сервис на Netlify</li>
+        </ul>
+
+        <div class="flex flex-wrap gap-2 mb-7">
+          <span class="stack-tag">Swift</span>
+          <span class="stack-tag">Tailwind CSS</span>
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">Netlify</span>
+        </div>
+
+        <!-- Interactive bottom trigger -->
+        <div class="flex items-center justify-between pt-5" style="border-top:1px solid rgba(255,255,255,.06)">
+          <div class="flex items-center gap-2 text-[0.82rem] font-semibold text-[#2997FF] group-hover:text-[#5aadff] transition-colors">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>Смотреть интерфейс (4 экрана)</span>
+          </div>
+          <div class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 group-hover:bg-[#2997FF] group-hover:text-black group-hover:border-[#2997FF] transition-all">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ STACK ═══════════════════ -->
+<section id="stack" class="relative overflow-hidden">
+  <div class="glow-section" style="right:-200px;bottom:0"></div>
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="mb-16">
+      <div class="label-text" style="color:#2997FF;margin-bottom:14px">Технологический стек</div>
+      <h2 class="section-title text-white" style="max-width:460px">Инструменты мастера.</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="stack-cell spotlight-card">
+        <div style="font-size:2.2rem;margin-bottom:14px">🐍</div>
+        <div style="font-size:.9rem;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em">Python</div>
+        <div style="font-size:.75rem;color:#94A3B8;line-height:1.5;margin-bottom:14px">Backend, AI, Automation</div>
+        <div class="flex flex-wrap justify-center gap-1.5">
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">FastAPI</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Aiogram</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Pandas</span>
+        </div>
+      </div>
+
+      <div class="stack-cell spotlight-card">
+        <div style="font-size:2.2rem;margin-bottom:14px">🌐</div>
+        <div style="font-size:.9rem;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em">Frontend</div>
+        <div style="font-size:.75rem;color:#94A3B8;line-height:1.5;margin-bottom:14px">JS, HTML5, Tailwind</div>
+        <div class="flex flex-wrap justify-center gap-1.5">
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Tailwind</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">JavaScript</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">HTML5</span>
+        </div>
+      </div>
+
+      <div class="stack-cell spotlight-card">
+        <div style="font-size:2.2rem;margin-bottom:14px">📱</div>
+        <div style="font-size:.9rem;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em">Mobile</div>
+        <div style="font-size:.75rem;color:#94A3B8;line-height:1.5;margin-bottom:14px">Swift, Flutter</div>
+        <div class="flex flex-wrap justify-center gap-1.5">
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">SwiftUI</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Flutter</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Dart</span>
+        </div>
+      </div>
+
+      <div class="stack-cell spotlight-card">
+        <div style="font-size:2.2rem;margin-bottom:14px">🧠</div>
+        <div style="font-size:.9rem;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-.01em">AI Models</div>
+        <div style="font-size:.75rem;color:#94A3B8;line-height:1.5;margin-bottom:14px">LLMs, Groq, APIs</div>
+        <div class="flex flex-wrap justify-center gap-1.5">
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Groq API</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">Llama 3</span>
+          <span class="stack-tag" style="font-size:.68rem;padding:3px 8px">OpenAI</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">Figma</span>
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">SQLite</span>
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">PostgreSQL</span>
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">Git</span>
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">Linux</span>
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">REST APIs</span>
+      <span class="stack-tag" style="font-size:.78rem;padding:7px 16px">UI/UX Design</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════ CONTACT ═══════════════════ -->
+<section id="contact" class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <div class="max-w-4xl mx-auto relative">
+      <div class="glow-contact"></div>
+
+      <div class="glass relative z-10 text-center" style="border-radius:28px;padding:clamp(40px,6vw,70px) clamp(24px,5vw,56px)">
+        <div class="label-text" style="color:#2997FF;margin-bottom:16px">Контакты</div>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:18px">
+          Открыт к сотрудничеству.
+        </h2>
+        <p style="font-size:.98rem;color:#94A3B8;line-height:1.75;max-width:540px;margin:0 auto 38px">
+          Интересные технические задачи, разработка AI-решений, ботов или продуктовые идеи? <span class="text-white font-medium">Чтобы связаться со мной, напишите в Direct в Instagram</span> — я всегда на связи и открыт к диалогу.
+        </p>
+
+        <!-- Apple-styled Glass Contact Cards Grid (3 cards) with Spotlight -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+
+          <!-- 1. Instagram (Primary Contact / Direct) -->
+          <a href="https://www.instagram.com/abo_tech_lab?stkn=MWN5MDNxbGV1dm5taA%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="contact-glass-card spotlight-card group" style="border-color:rgba(41,151,255,0.25);">
+            <div class="flex items-center gap-3.5 relative z-10">
+              <div class="contact-icon-box" style="background:rgba(41,151,255,0.14);border-color:rgba(41,151,255,0.35);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[0.68rem] tracking-wider uppercase font-semibold text-[#2997FF] mb-0.5">Для связи · Direct</span>
+                <span class="block text-[0.95rem] font-bold text-white tracking-tight">Instagram</span>
+                <span class="block text-[0.76rem] text-[#94A3B8]">@abo_tech_lab</span>
+              </div>
+            </div>
+            <svg class="w-4 h-4 text-white/30 group-hover:text-[#2997FF] group-hover:translate-x-1 transition-all flex-shrink-0 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <!-- 2. Telegram-канал -->
+          <a href="https://t.me/+cPwyWmMK0dg1Njdi" target="_blank" rel="noopener" class="contact-glass-card spotlight-card group">
+            <div class="flex items-center gap-3.5 relative z-10">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  <line x1="8" y1="9" x2="16" y2="9"></line>
+                  <line x1="8" y1="13" x2="13" y2="13"></line>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[0.68rem] tracking-wider uppercase font-semibold text-[#2997FF] mb-0.5">AI &amp; Tech мысли</span>
+                <span class="block text-[0.95rem] font-bold text-white tracking-tight">Telegram-канал</span>
+                <span class="block text-[0.76rem] text-[#94A3B8]">Aboo Tech Lab</span>
+              </div>
+            </div>
+            <svg class="w-4 h-4 text-white/30 group-hover:text-[#2997FF] group-hover:translate-x-1 transition-all flex-shrink-0 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+          <!-- 3. GitHub -->
+          <a href="https://github.com/abo-art" target="_blank" rel="noopener" class="contact-glass-card spotlight-card group">
+            <div class="flex items-center gap-3.5 relative z-10">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <span class="block text-[0.68rem] tracking-wider uppercase font-semibold text-[#2997FF] mb-0.5">Исходный код</span>
+                <span class="block text-[0.95rem] font-bold text-white tracking-tight">GitHub</span>
+                <span class="block text-[0.76rem] text-[#94A3B8]">@abo-art</span>
+              </div>
+            </div>
+            <svg class="w-4 h-4 text-white/30 group-hover:text-[#2997FF] group-hover:translate-x-1 transition-all flex-shrink-0 relative z-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer style="padding:44px 0 36px;border-top:1px solid rgba(255,255,255,.05)">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Aboo tech labs" class="w-6 h-6 rounded-[7px] object-cover border border-white/15" />
+        <div class="status-dot" style="width:6px;height:6px"></div>
+        <span style="font-size:.85rem;font-weight:700;color:rgba(255,255,255,.7)">Aboo <span style="color:#2997FF">tech labs</span></span>
+      </div>
+
+      <p style="font-size:.75rem;color:rgba(255,255,255,.3);text-align:center">&#169; 2026 Aboo tech labs · Абылай. Все права защищены.</p>
+
+      <!-- Glass buttons in footer -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5">
+        <a href="https://www.instagram.com/abo_tech_lab?stkn=MWN5MDNxbGV1dm5taA%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="footer-glass-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          Instagram
+        </a>
+        <a href="https://t.me/+cPwyWmMK0dg1Njdi" target="_blank" rel="noopener" class="footer-glass-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Telegram-канал
+        </a>
+        <a href="https://github.com/abo-art" target="_blank" rel="noopener" class="footer-glass-pill">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════ FLOATING BACK TO TOP ═══════════════════ -->
+<button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Наверх">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+
+<!-- ═══════════════════ LIVESPORT MODAL ═══════════════════ -->
+<div id="livesport-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-2xl transition-all duration-300" onclick="handleLivesportBackdropClick(event)">
+  <div class="relative w-full max-w-4xl bg-[rgba(15,15,20,0.92)] backdrop-blur-3xl border border-white/10 rounded-[28px] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95),0_0_60px_rgba(41,151,255,0.18)] flex flex-col max-h-[92vh]">
+    
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/50">
+      <div class="flex items-center gap-3.5">
+        <img src="assets/livesport/icon.jpg" alt="Livesport Icon" class="w-10 h-10 rounded-xl object-cover border border-white/10 shadow-md" />
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-base sm:text-lg font-bold text-white tracking-tight">Livesport</h3>
+            <span class="text-[0.65rem] font-semibold text-[#2997FF] bg-[rgba(41,151,255,0.1)] border border-[rgba(41,151,255,0.25)] px-2.5 py-0.5 rounded-full uppercase tracking-wider">Showcase</span>
+          </div>
+          <p class="text-xs text-[#94A3B8] hidden sm:block">Sports &amp; Streaming Platform / Web &amp; Mobile App</p>
+        </div>
+      </div>
+      <!-- Close button -->
+      <button onclick="closeLivesportModal()" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white/70 hover:text-white transition-all cursor-pointer" aria-label="Закрыть">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Body (Slider) -->
+    <div class="relative flex-1 overflow-y-auto p-4 sm:p-6 flex flex-col items-center justify-center bg-black/30">
+      
+      <!-- Slide Container -->
+      <div class="relative w-full max-w-2xl aspect-[4/3] sm:aspect-[16/10] max-h-[55vh] flex items-center justify-center rounded-2xl overflow-hidden bg-black/80 border border-white/10 shadow-2xl">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(41,151,255,0.15)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <!-- Slide Image -->
+        <img id="livesport-slide-img" src="assets/livesport/icon.jpg" alt="Livesport Screen" class="w-full h-full object-contain p-2 sm:p-4 transition-opacity duration-300" />
+
+        <!-- Prev button -->
+        <button onclick="prevLivesportSlide(event)" class="absolute left-3 w-10 h-10 rounded-full bg-black/70 hover:bg-black/95 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:text-[#2997FF] transition-all cursor-pointer shadow-lg" aria-label="Предыдущий слайд">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Next button -->
+        <button onclick="nextLivesportSlide(event)" class="absolute right-3 w-10 h-10 rounded-full bg-black/70 hover:bg-black/95 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:text-[#2997FF] transition-all cursor-pointer shadow-lg" aria-label="Следующий слайд">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Slide Title & Counter -->
+      <div class="w-full max-w-2xl mt-4 flex items-center justify-between px-2">
+        <div id="livesport-slide-caption" class="text-white font-medium text-xs sm:text-sm tracking-tight">
+          Иконка и айдентика бренда Livesport
+        </div>
+        <div id="livesport-slide-counter" class="text-[#2997FF] text-xs font-semibold tracking-wider">
+          1 / 5
+        </div>
+      </div>
+
+      <!-- Dots Indicators -->
+      <div id="livesport-dots" class="flex items-center gap-2 mt-3">
+        <!-- generated dynamically -->
+      </div>
+    </div>
+
+    <!-- Modal Footer / Details -->
+    <div class="px-6 py-4 border-t border-white/10 bg-black/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs text-[#94A3B8] font-medium mr-1">Стек:</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">Python</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">Frontend</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">APIs</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">UI/UX Design</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://www.instagram.com/abo_tech_lab?stkn=MWN5MDNxbGV1dm5taA%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="btn-primary text-xs py-2 px-4">
+          Написать в Direct
+        </a>
+        <button onclick="closeLivesportModal()" class="btn-ghost text-xs py-2 px-4 cursor-pointer">
+          Закрыть
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════ ABOOPAY MODAL ═══════════════════ -->
+<div id="aboopay-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-2xl transition-all duration-300" onclick="handleAbooPayBackdropClick(event)">
+  <div class="relative w-full max-w-4xl bg-[rgba(15,15,20,0.92)] backdrop-blur-3xl border border-white/10 rounded-[28px] overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.95),0_0_60px_rgba(41,151,255,0.18)] flex flex-col max-h-[92vh]">
+    
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-black/50">
+      <div class="flex items-center gap-3.5">
+        <img src="assets/aboopay/icon.jpg" alt="AbooPay Icon" class="w-10 h-10 rounded-xl object-cover border border-white/10 shadow-md" />
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-base sm:text-lg font-bold text-white tracking-tight">AbooPay</h3>
+            <span class="text-[0.65rem] font-semibold text-[#2997FF] bg-[rgba(41,151,255,0.1)] border border-[rgba(41,151,255,0.25)] px-2.5 py-0.5 rounded-full uppercase tracking-wider">Case Study</span>
+          </div>
+          <p class="text-xs text-[#94A3B8] hidden sm:block">Fintech &amp; Salary Calculator / Web &amp; iOS</p>
+        </div>
+      </div>
+      <!-- Close button -->
+      <button onclick="closeAbooPayModal()" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center text-white/70 hover:text-white transition-all cursor-pointer" aria-label="Закрыть">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Body (Slider) -->
+    <div class="relative flex-1 overflow-y-auto p-4 sm:p-6 flex flex-col items-center justify-center bg-black/30">
+      
+      <!-- Slide Container -->
+      <div class="relative w-full max-w-2xl aspect-[4/3] sm:aspect-[16/10] max-h-[55vh] flex items-center justify-center rounded-2xl overflow-hidden bg-black/80 border border-white/10 shadow-2xl">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(41,151,255,0.15)_0%,transparent_70%)] pointer-events-none"></div>
+
+        <!-- Slide Image -->
+        <img id="aboopay-slide-img" src="assets/aboopay/icon.jpg" alt="AbooPay Screen" class="w-full h-full object-contain p-2 sm:p-4 transition-opacity duration-300" />
+
+        <!-- Prev button -->
+        <button onclick="prevAbooPaySlide(event)" class="absolute left-3 w-10 h-10 rounded-full bg-black/70 hover:bg-black/95 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:text-[#2997FF] transition-all cursor-pointer shadow-lg" aria-label="Предыдущий слайд">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Next button -->
+        <button onclick="nextAbooPaySlide(event)" class="absolute right-3 w-10 h-10 rounded-full bg-black/70 hover:bg-black/95 backdrop-blur-md border border-white/15 flex items-center justify-center text-white hover:text-[#2997FF] transition-all cursor-pointer shadow-lg" aria-label="Следующий слайд">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Slide Title & Counter -->
+      <div class="w-full max-w-2xl mt-4 flex items-center justify-between px-2">
+        <div id="aboopay-slide-caption" class="text-white font-medium text-xs sm:text-sm tracking-tight">
+          AbooPay Brand Icon · 3D-айдентика и визуальный знак
+        </div>
+        <div id="aboopay-slide-counter" class="text-[#2997FF] text-xs font-semibold tracking-wider">
+          1 / 4
+        </div>
+      </div>
+
+      <!-- Dots Indicators -->
+      <div id="aboopay-dots" class="flex items-center gap-2 mt-3">
+        <!-- generated dynamically -->
+      </div>
+    </div>
+
+    <!-- Modal Footer / Details -->
+    <div class="px-6 py-4 border-t border-white/10 bg-black/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs text-[#94A3B8] font-medium mr-1">Стек:</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">Swift</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">Tailwind CSS</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">JavaScript</span>
+        <span class="stack-tag text-[0.7rem] py-1 px-2.5">Netlify</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="https://aboopay.netlify.app/" target="_blank" rel="noopener" class="btn-primary text-xs py-2 px-4 inline-flex items-center gap-1.5">
+          <span>Открыть веб-версию</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+        <button onclick="closeAbooPayModal()" class="btn-ghost text-xs py-2 px-4 cursor-pointer">
+          Закрыть
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hb1 = document.getElementById('hb1');
+  const hb2 = document.getElementById('hb2');
+  const hb3 = document.getElementById('hb3');
+  let menuOpen = false;
+
+  hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    hb1.style.transform = menuOpen ? 'translateY(8px) rotate(45deg)' : '';
+    hb2.style.opacity = menuOpen ? '0' : '';
+    hb3.style.transform = menuOpen ? 'translateY(-8px) rotate(-45deg)' : '';
+  });
+
+  function closeMobileMenu() {
+    menuOpen = false;
+    mobileMenu.classList.remove('open');
+    hb1.style.transform = '';
+    hb2.style.opacity = '';
+    hb3.style.transform = '';
+  }
+
+  // Active nav on scroll & scroll progress indicator
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const progressBar = document.getElementById('scroll-progress');
+  const backToTopBtn = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    // Progress bar
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    if (progressBar) progressBar.style.width = `${scrolled}%`;
+
+    // Back to top visibility
+    if (backToTopBtn) {
+      if (winScroll > 450) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }
+  }, { passive: true });
+
+  const secObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.style.color = link.getAttribute('href') === '#' + entry.target.id
+            ? '#fff' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => secObs.observe(s));
+
+  // Scroll-in entrance animations
+  const cards = document.querySelectorAll('.philo-card, .project-card, .stack-cell, .contact-glass-card, .portrait-card');
+  const allCards = Array.from(cards);
+  const cardObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = (allCards.indexOf(entry.target) % 4) * 80;
+        entry.target.style.transition =
+          `opacity .55s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform .55s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, background-color .3s, border-color .3s, box-shadow .3s`;
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        cardObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  cards.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    cardObs.observe(el);
+  });
+
+  /* ── Infinite Spotlight Ticker Mouse Interaction & Fluid Lerp ── */
+  const tickerSection = document.getElementById('spotlight-ticker');
+  if (tickerSection) {
+    let targetX = 50;
+    let currentX = 50;
+
+    tickerSection.addEventListener('mousemove', (e) => {
+      const rect = tickerSection.getBoundingClientRect();
+      const xPos = ((e.clientX - rect.left) / rect.width) * 100;
+      targetX = Math.max(6, Math.min(94, xPos));
+    });
+
+    tickerSection.addEventListener('mouseleave', () => {
+      targetX = 50; // Smooth glide back to center spotlight
+    });
+
+    tickerSection.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const rect = tickerSection.getBoundingClientRect();
+        const xPos = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+        targetX = Math.max(6, Math.min(94, xPos));
+      }
+    }, { passive: true });
+
+    tickerSection.addEventListener('touchend', () => {
+      targetX = 50;
+    });
+
+    function animateTickerSpotlight() {
+      // Apple-grade fluid lerp inertia
+      currentX += (targetX - currentX) * 0.1;
+      tickerSection.style.setProperty('--ticker-x', `${currentX.toFixed(2)}%`);
+      requestAnimationFrame(animateTickerSpotlight);
+    }
+    requestAnimationFrame(animateTickerSpotlight);
+  }
+
+  /* ── Interactive Glass Spotlight Micro-interaction ── */
+  const spotlightElements = document.querySelectorAll('.spotlight-card');
+  spotlightElements.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+  });
+
+  /* ── Subtle 3D Perspective Card Tilt on Mouse Move ── */
+  const tiltCards = document.querySelectorAll('.project-card, .portrait-card');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return; // Only on desktop
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -3.5;
+      const rotateY = ((x - centerX) / centerX) * 3.5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+
+  /* ── Interactive macOS AI Playground Controller ── */
+  const terminalScreen = document.getElementById('terminal-screen');
+  const terminalInput = document.getElementById('terminal-input');
+  const terminalRunBtn = document.getElementById('terminal-run-btn');
+  const terminalPresets = document.getElementById('terminal-presets');
+  const terminalWindowTitle = document.getElementById('terminal-window-title');
+  const hudLatency = document.getElementById('hud-latency');
+  const hudThroughput = document.getElementById('hud-throughput');
+  const hudEngine = document.getElementById('hud-engine');
+  const hudStatus = document.getElementById('hud-status');
+  const copyTerminalBtn = document.getElementById('copy-terminal-btn');
+  const copyBtnText = document.getElementById('copy-btn-text');
+
+  let activeTab = 'ai-agent';
+  let isStreaming = false;
+
+  const tabConfigs = {
+    'ai-agent': {
+      title: '~/aboo-lab/ai_agent.py — Groq LPU Llama-3-70B',
+      engine: 'FastAPI Async / Llama-3-70B',
+      presets: [
+        { label: '▸ RAG & Векторный контекст', cmd: 'rag_query --topic "Мультиагентные системы"' },
+        { label: '▸ Groq API Llama 3 бенчмарк', cmd: 'benchmark_groq --tokens 512' },
+        { label: '▸ Autonomous Agent Tool Call', cmd: 'run_agent --goal "Sync Livesport & AbooPay"' }
+      ],
+      welcome: [
+        '<span style="color:#64748B"># Aboo Tech Labs · Neural Inference Engine v3.4</span>',
+        '<span style="color:#64748B"># Connected to Groq LPU Cluster (Llama-3-70B-Instruct) via FastAPI AsyncIO</span>',
+        '<span style="color:#2997FF;font-weight:600">Система готова. Выберите команду выше или задайте любой технический вопрос в поле ввода:</span>',
+        ''
+      ]
+    },
+    'tg-engine': {
+      title: '~/aboo-lab/tg_engine.py — Python 3.12 · AsyncIO Dispatcher',
+      engine: 'aiogram 3.x / uvloop / Redis FSM',
+      presets: [
+        { label: '▸ Стресс-тест 50,000 апдейтов/сек', cmd: 'stress_test --updates 50000 --workers 16' },
+        { label: '▸ FSM стейт-машина диалога', cmd: 'simulate_fsm --user @client_104' },
+        { label: '▸ Анти-флуд & Rate-Limiter', cmd: 'test_ddos_guard --burst 60' }
+      ],
+      welcome: [
+        '<span style="color:#64748B"># High-Load Telegram Bot Dispatcher Engine v2.8</span>',
+        '<span style="color:#64748B"># Webhook listener active on port 8443 (TLS 1.3 · uvloop backend)</span>',
+        '<span style="color:#2997FF;font-weight:600">Диспетчер событий готов. Запустите симуляцию нагрузки или проверку стейт-машины:</span>',
+        ''
+      ]
+    },
+    'analytics': {
+      title: '~/aboo-lab/data_analytics.py — NumPy · Pandas · PyTorch',
+      engine: 'PyTorch / Scikit-Learn / Polars Core',
+      presets: [
+        { label: '▸ Анализ аномалий в ФОТ (AbooPay)', cmd: 'audit_payroll --records 1200 --strict' },
+        { label: '▸ Векторный эмбеддинг кластеров', cmd: 'cluster_embeddings --dim 1536 --k 5' },
+        { label: '▸ Метрики корреляции признаков', cmd: 'compute_correlation --features all' }
+      ],
+      welcome: [
+        '<span style="color:#64748B"># Data Analytics & Mathematical Modeling Pipeline v4.1</span>',
+        '<span style="color:#64748B"># Vector tensor acceleration active (Metal Performance Shaders / CUDA)</span>',
+        '<span style="color:#2997FF;font-weight:600">Аналитический пайплайн инициализирован. Выберите модуль расчета данных:</span>',
+        ''
+      ]
+    }
+  };
+
+  const presetResponses = {
+    'rag_query --topic "Мультиагентные системы"': [
+      '<span style="color:#94A3B8">[VECTOR_DB] Эмбеддинг поискового запроса через text-embedding-3-small (1536d)... OK (2.8ms)</span>',
+      '<span style="color:#94A3B8">[SIMILARITY] Извлечены 4 релевантных контекстных чанка (cosine distance: 0.948)</span>',
+      '<span style="color:#94A3B8">[GROQ_LPU] Отправка батча в кластер Llama-3-70B... Соединение установлено</span>',
+      '<span style="color:#5aadff;font-weight:600">Ответ LLM-агента:</span>',
+      '<span style="color:#fff">"Архитектура мультиагентной системы в Aboo Tech Labs базируется на строгом разделении ролей:</span>',
+      '<span style="color:#fff"> 1. <span style="color:#2997FF">Orchestrator Agent:</span> парсит входящий запрос, валидирует схему Pydantic v2 и распределяет sub-tasks.</span>',
+      '<span style="color:#fff"> 2. <span style="color:#2997FF">Tool Execution Agent:</span> выполняет параллельные асинхронные HTTP/RPC вызовы к базам данных и API.</span>',
+      '<span style="color:#fff"> 3. <span style="color:#2997FF">Verifier &amp; Guard:</span> верифицирует точность фактов и отсекает галлюцинации перед финальным ответом."</span>',
+      '<span style="color:#34D399;font-weight:600">✓ Генерация завершена · 162 токена · Задержка первого токена: 13.9ms</span>'
+    ],
+    'benchmark_groq --tokens 512': [
+      '<span style="color:#94A3B8">[TEST] Запуск замера пропускной способности Groq LPU на 512 токенов...</span>',
+      '<span style="color:#94A3B8">[TTFT] Time to first token: 12.4 ms (Instant response)</span>',
+      '<span style="color:#94A3B8">[STREAM] Генерация синтетического токенопотока...</span>',
+      '<span style="color:#fff">  ├─ Chunk 1-128   : 540 tokens/sec | p95: 14.1ms</span>',
+      '<span style="color:#fff">  ├─ Chunk 129-384 : 528 tokens/sec | p95: 14.3ms</span>',
+      '<span style="color:#fff">  └─ Chunk 385-512 : 534 tokens/sec | p95: 14.0ms</span>',
+      '<span style="color:#34D399;font-weight:600">⚡ Средняя скорость: 531 токенов/сек. Это в ~9 раз быстрее стандартных облачных GPU!</span>'
+    ],
+    'run_agent --goal "Sync Livesport & AbooPay"': [
+      '<span style="color:#94A3B8">[AGENT] Анализ цели: Синхронизация аналитических данных Livesport и AbooPay</span>',
+      '<span style="color:#94A3B8">[STEP 1] Вызов livesport_api.get_live_metrics() -> 200 OK (8ms)</span>',
+      '<span style="color:#fff">  └─ Найдено: 18 активных матчей, 12,400 активных пользователей live</span>',
+      '<span style="color:#94A3B8">[STEP 2] Вызов aboopay_engine.recalculate_payroll_batch() -> 200 OK (4ms)</span>',
+      '<span style="color:#fff">  └─ Успешно пересчитаны налоги и ФОТ по ставкам 2026 года для 64 сотрудников</span>',
+      '<span style="color:#34D399;font-weight:600">✓ Все микросервисы синхронизированы без конфликтов данных за 0.021s.</span>'
+    ],
+    'stress_test --updates 50000 --workers 16': [
+      '<span style="color:#94A3B8">[BENCHMARK] Инициализация 16 асинхронных воркеров на uvloop...</span>',
+      '<span style="color:#94A3B8">[INGEST] Заливка 50,000 входящих Webhook Update объектов в конвейер...</span>',
+      '<span style="color:#fff">  [20%] 10,000 апдейтов обработано · очередь: 0 · latency: 0.9ms</span>',
+      '<span style="color:#fff">  [60%] 30,000 апдейтов обработано · RAM: 44MB · latency: 1.1ms</span>',
+      '<span style="color:#fff">  [100%] 50,000 апдейтов обработано · 0 ошибок · zero dropped packets</span>',
+      '<span style="color:#34D399;font-weight:600">🚀 Результат: 48,200 req/sec sustained throughput. Готовность к пиковым нагрузкам 100%.</span>'
+    ],
+    'simulate_fsm --user @client_104': [
+      '<span style="color:#94A3B8">[FSM] Инициализация стейт-машины для клиента @client_104...</span>',
+      '<span style="color:#fff">  Current: <span style="color:#64748B">StartState</span> -> Transition: <span style="color:#2997FF">AwaitingProjectSpecs</span></span>',
+      '<span style="color:#94A3B8">[INPUT] Получен текст: "Нужен Telegram-бот для расчета зарплат с интеграцией в CRM"</span>',
+      '<span style="color:#fff">  Pydantic Validation: <span style="color:#34D399">OK</span> | Intent Detected: <span style="color:#2997FF">FINTECH_CALCULATOR</span></span>',
+      '<span style="color:#fff">  State Changed: <span style="color:#2997FF">AwaitingBudgetApproval</span> (State persisted to Redis in 0.3ms)</span>',
+      '<span style="color:#34D399;font-weight:600">✓ Стейт сохранен. Бот мгновенно отправил инлайн-клавиатуру пользователю.</span>'
+    ],
+    'test_ddos_guard --burst 60': [
+      '<span style="color:#94A3B8">[SECURITY] Активация алгоритма Token Bucket (Rate limit: 5 req/s)...</span>',
+      '<span style="color:#fff">  Req 1-5   : <span style="color:#34D399">Allowed (200 OK)</span></span>',
+      '<span style="color:#fff">  Req 6-60  : <span style="color:#EF4444">Blocked (429 Too Many Requests · IP throttled)</span></span>',
+      '<span style="color:#34D399;font-weight:600">🛡 DDoS Guard успешно отразил флуд-атаку без расхода ресурсов базы данных.</span>'
+    ],
+    'audit_payroll --records 1200 --strict': [
+      '<span style="color:#94A3B8">[AUDIT] Загрузка датасета начислений AbooPay (1,200 строк)...</span>',
+      '<span style="color:#94A3B8">[STATS] Медианный ФОТ: 745,000 ₸ | Дисперсия: 114,200 ₸ | ОПВ/ИПН формулы: 2026 standard</span>',
+      '<span style="color:#fff">  Изолирующий лес (Isolation Forest): сканирование аномалий...</span>',
+      '<span style="color:#F59E0B">  ⚠️ Найдено 2 аномалии: #204 (ошибка округления соц. отчислений) и #819 (превышение лимита вычета)</span>',
+      '<span style="color:#34D399;font-weight:600">✓ Автоматическая коррекция предложена. Финансовый отчет сформирован с точностью 99.9%.</span>'
+    ],
+    'cluster_embeddings --dim 1536 --k 5': [
+      '<span style="color:#94A3B8">[COMPUTE] Извлечение матрицы векторов (1,536 измерений)...</span>',
+      '<span style="color:#94A3B8">[REDUCTION] UMAP проекция 1536D -> 3D латентное пространство (18ms)...</span>',
+      '<span style="color:#fff">  Кластер 1: Финтех и алгоритмы налогов [AbooPay Core] (34%)</span>',
+      '<span style="color:#fff">  Кластер 2: Спортивная аналитика в реальном времени [Livesport] (33%)</span>',
+      '<span style="color:#fff">  Кластер 3: Автономные боты и LLM интеграции [Aboo Labs] (33%)</span>',
+      '<span style="color:#34D399;font-weight:600">✓ Silhouette Score = 0.884 (Высокая чистота разделения кластеров).</span>'
+    ],
+    'compute_correlation --features all': [
+      '<span style="color:#94A3B8">[DATA] Расчет матрицы коэффициентов Пирсона и Спирмена...</span>',
+      '<span style="color:#fff">  • Время отклика LLM &lt;-> Удержание пользователей : <span style="color:#34D399">r = -0.924</span> (чем быстрее, тем выше retention)</span>',
+      '<span style="color:#fff">  • Минималистичный Apple UI &lt;-> Конверсия в заказ : <span style="color:#34D399">r = +0.871</span></span>',
+      '<span style="color:#fff">  • Отказоустойчивость бэкенда &lt;-> LTV клиента    : <span style="color:#34D399">r = +0.958</span></span>',
+      '<span style="color:#34D399;font-weight:600">✓ Вывод: Скорость и бескомпромиссная эргономика — ключевые драйверы успеха продукта.</span>'
+    ]
+  };
+
+  function renderTerminalScreen(lines) {
+    if (!terminalScreen) return;
+    terminalScreen.innerHTML = lines.map(line => `<div>${line}</div>`).join('') + 
+      '<div id="terminal-active-line" class="mt-2"><span class="terminal-cursor"></span></div>';
+    terminalScreen.scrollTop = terminalScreen.scrollHeight;
+  }
+
+  function updateHUD(latency, throughput, status) {
+    if (latency && hudLatency) hudLatency.textContent = `${latency.toFixed(1)} ms`;
+    if (throughput && hudThroughput) hudThroughput.textContent = `${throughput} tok/s`;
+    if (status && hudStatus) hudStatus.textContent = status;
+  }
+
+  function setupTab(tabId) {
+    activeTab = tabId;
+    const cfg = tabConfigs[tabId];
+    if (!cfg) return;
+
+    if (terminalWindowTitle) terminalWindowTitle.textContent = cfg.title;
+    if (hudEngine) hudEngine.textContent = cfg.engine;
+
+    const tabBtns = document.querySelectorAll('.lab-tab-btn');
+    tabBtns.forEach(btn => {
+      if (btn.getAttribute('data-tab') === tabId) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    if (terminalPresets) {
+      terminalPresets.innerHTML = cfg.presets.map((p) => `
+        <button class="preset-chip" onclick="handlePresetClick('${p.cmd.replace(/'/g, "\\'")}')">
+          ${p.label}
+        </button>
+      `).join('');
+    }
+
+    renderTerminalScreen(cfg.welcome);
+    updateHUD(14.2 + (Math.random() * 2), 510 + Math.floor(Math.random() * 30), 'Status: 200 OK (0.012s)');
+  }
+
+  window.handlePresetClick = function(cmd) {
+    if (isStreaming) return;
+    if (terminalInput) terminalInput.value = cmd;
+    runCommand(cmd);
+  };
+
+  function streamOutput(lines, onComplete) {
+    if (isStreaming) return;
+    isStreaming = true;
+    if (terminalRunBtn) terminalRunBtn.disabled = true;
+
+    const activeLine = document.getElementById('terminal-active-line');
+    if (activeLine) activeLine.remove();
+
+    let lineIdx = 0;
+    
+    function streamNextLine() {
+      if (lineIdx < lines.length) {
+        const lineDiv = document.createElement('div');
+        lineDiv.innerHTML = lines[lineIdx];
+        terminalScreen.appendChild(lineDiv);
+        terminalScreen.scrollTop = terminalScreen.scrollHeight;
+        lineIdx++;
+
+        updateHUD(
+          13.0 + Math.random() * 3.5,
+          515 + Math.floor(Math.random() * 35),
+          'Status: 200 OK (Streaming...)'
+        );
+
+        setTimeout(streamNextLine, 75);
+      } else {
+        const cursorDiv = document.createElement('div');
+        cursorDiv.id = 'terminal-active-line';
+        cursorDiv.className = 'mt-2';
+        cursorDiv.innerHTML = '<span class="terminal-cursor"></span>';
+        terminalScreen.appendChild(cursorDiv);
+        terminalScreen.scrollTop = terminalScreen.scrollHeight;
+
+        isStreaming = false;
+        if (terminalRunBtn) terminalRunBtn.disabled = false;
+        updateHUD(14.1, 520, 'Status: 200 OK (Done)');
+        if (onComplete) onComplete();
+      }
+    }
+
+    streamNextLine();
+  }
+
+  function runCommand(rawCmd) {
+    const cmd = (rawCmd || (terminalInput ? terminalInput.value : '')).trim();
+    if (!cmd || isStreaming) return;
+
+    const cmdEcho = `<div class="mt-3 text-white/80"><span style="color:#2997FF;font-weight:600">aboo@labs:~$</span> <span style="color:#fff">${cmd}</span></div>`;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = cmdEcho;
+    
+    const activeLine = document.getElementById('terminal-active-line');
+    if (activeLine) activeLine.remove();
+    terminalScreen.appendChild(tempDiv);
+
+    if (terminalInput) terminalInput.value = '';
+
+    if (presetResponses[cmd]) {
+      streamOutput(presetResponses[cmd]);
+      return;
+    }
+
+    const lower = cmd.toLowerCase();
+    let dynamicReply = [];
+
+    if (lower.includes('livesport') || lower.includes('спорт') || lower.includes('stream')) {
+      dynamicReply = [
+        '<span style="color:#94A3B8">[PROJECT] Запрос информации о платформе Livesport...</span>',
+        '<span style="color:#fff">"Livesport — высоконагруженный сервис отслеживания спортивных трансляций в реальном времени.</span>',
+        '<span style="color:#fff"> Стек: Python бэкенд, WebSocket стриминг, нормализованные схемы данных, dark-mode дизайн."</span>',
+        '<span style="color:#2997FF">Подробный кейс доступен в секции «Портфолио» ниже с интерактивной галереей.</span>',
+        '<span style="color:#34D399;font-weight:600">✓ Запрос выполнен за 15.2ms.</span>'
+      ];
+    } else if (lower.includes('aboopay') || lower.includes('зарплат') || lower.includes('налог') || lower.includes('фоt')) {
+      dynamicReply = [
+        '<span style="color:#94A3B8">[PROJECT] Запрос аналитического модуля AbooPay...</span>',
+        '<span style="color:#fff">"AbooPay — специализированное финтех-приложение для точного расчета зарплаты, ИПН, ОПВ и аудита ФОТ.</span>',
+        '<span style="color:#fff"> Стек: Swift, Tailwind CSS, JavaScript, Netlify деплой + встроенный ИИ-консультант."</span>',
+        '<span style="color:#2997FF">Кликните на карточку AbooPay в секции «Портфолио», чтобы открыть живое веб-приложение или модальное окно.</span>',
+        '<span style="color:#34D399;font-weight:600">✓ Запрос выполнен за 14.8ms.</span>'
+      ];
+    } else if (lower.includes('кто ты') || lower.includes('абылай') || lower.includes('автор') || lower.includes('обо мне')) {
+      dynamicReply = [
+        '<span style="color:#94A3B8">[SYSTEM] Идентификация создателя лаборатории...</span>',
+        '<span style="color:#fff">"Абылай — Software Engineer &amp; AI Researcher (Artificial Intelligence &amp; Data Analytics).</span>',
+        '<span style="color:#fff"> Специализируется на разработке умных ботов, LLM-интеграций (Groq / Llama 3), чистого асинхронного бэкенда на Python и нативного UI."</span>',
+        '<span style="color:#34D399;font-weight:600">✓ Основатель Aboo Tech Labs.</span>'
+      ];
+    } else if (lower.includes('контакт') || lower.includes('связ') || lower.includes('заказ') || lower.includes('direct') || lower.includes('инст')) {
+      dynamicReply = [
+        '<span style="color:#94A3B8">[ROUTING] Перенаправление на канал связи с Абылаем...</span>',
+        '<span style="color:#fff">"Для заказа разработки, AI-интеграций или консультации напишите напрямую в Instagram Direct:</span>',
+        '<a href="https://www.instagram.com/abo_tech_lab?stkn=MWN5MDNxbGV1dm5taA%3D%3D&utm_source=qr" target="_blank" rel="noopener" style="color:#2997FF;text-decoration:underline;font-weight:600">@abo_tech_lab (Instagram Direct)</a>',
+        '<span style="color:#34D399;font-weight:600">✓ Прямая ссылка открыта.</span>'
+      ];
+    } else {
+      dynamicReply = [
+        `<span style="color:#94A3B8">[GROQ LPU] Обработка запроса: "${cmd}"...</span>`,
+        '<span style="color:#fff">"Запрос успешно проанализирован нейросетевым ядром Aboo Tech Labs.</span>',
+        '<span style="color:#fff"> В архитектуре используется модульный конвейер: FastAPI + Llama 3 для глубокого логического рассуждения и высокой плотности токенов в секунду."</span>',
+        '<span style="color:#34D399;font-weight:600">✓ 200 OK · Ответ сгенерирован за 16.4ms.</span>'
+      ];
+    }
+
+    streamOutput(dynamicReply);
+  }
+
+  document.querySelectorAll('.lab-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      if (tab && tab !== activeTab && !isStreaming) {
+        setupTab(tab);
+      }
+    });
+  });
+
+  if (terminalRunBtn) {
+    terminalRunBtn.addEventListener('click', () => runCommand());
+  }
+  if (terminalInput) {
+    terminalInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        runCommand();
+      }
+    });
+  }
+
+  if (copyTerminalBtn) {
+    copyTerminalBtn.addEventListener('click', () => {
+      if (!terminalScreen) return;
+      const text = terminalScreen.innerText || terminalScreen.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        if (copyBtnText) copyBtnText.textContent = 'Скопировано!';
+        copyTerminalBtn.style.color = '#34D399';
+        setTimeout(() => {
+          if (copyBtnText) copyBtnText.textContent = 'Копировать';
+          copyTerminalBtn.style.color = '';
+        }, 2000);
+      }).catch(() => {});
+    });
+  }
+
+  // Initialize playground
+  setupTab('ai-agent');
+
+  /* ── Livesport Carousel / Modal Logic ── */
+  const livesportSlides = [
+    {
+      src: 'assets/livesport/icon.jpg',
+      caption: 'Иконка и айдентика бренда Livesport'
+    },
+    {
+      src: 'assets/livesport/slide1.png',
+      caption: 'Матч-центр в реальном времени · Скорость в каждом моменте'
+    },
+    {
+      src: 'assets/livesport/slide2.png',
+      caption: 'Чистая архитектура данных · Никакого лишнего шума'
+    },
+    {
+      src: 'assets/livesport/slide3.png',
+      caption: 'Ничего лишнего · Счет, время и подробная статистика live'
+    },
+    {
+      src: 'assets/livesport/slide4.png',
+      caption: 'Персонализация · Ваши любимые команды в первом ряду'
+    }
+  ];
+
+  let currentLivesportSlide = 0;
+  const livesportModal = document.getElementById('livesport-modal');
+  const livesportImg = document.getElementById('livesport-slide-img');
+  const livesportCaption = document.getElementById('livesport-slide-caption');
+  const livesportCounter = document.getElementById('livesport-slide-counter');
+  const livesportDots = document.getElementById('livesport-dots');
+
+  function buildLivesportDots() {
+    livesportDots.innerHTML = '';
+    livesportSlides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `modal-dot ${idx === currentLivesportSlide ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Слайд ${idx + 1}`);
+      dot.onclick = (e) => {
+        e.stopPropagation();
+        goToLivesportSlide(idx);
+      };
+      livesportDots.appendChild(dot);
+    });
+  }
+
+  function updateLivesportSlideView() {
+    livesportImg.style.opacity = '0';
+    setTimeout(() => {
+      livesportImg.src = livesportSlides[currentLivesportSlide].src;
+      livesportCaption.textContent = livesportSlides[currentLivesportSlide].caption;
+      livesportCounter.textContent = `${currentLivesportSlide + 1} / ${livesportSlides.length}`;
+      
+      const dots = livesportDots.querySelectorAll('.modal-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentLivesportSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+      livesportImg.style.opacity = '1';
+    }, 150);
+  }
+
+  function goToLivesportSlide(idx) {
+    currentLivesportSlide = idx;
+    updateLivesportSlideView();
+  }
+
+  function nextLivesportSlide(e) {
+    if (e) e.stopPropagation();
+    currentLivesportSlide = (currentLivesportSlide + 1) % livesportSlides.length;
+    updateLivesportSlideView();
+  }
+
+  function prevLivesportSlide(e) {
+    if (e) e.stopPropagation();
+    currentLivesportSlide = (currentLivesportSlide - 1 + livesportSlides.length) % livesportSlides.length;
+    updateLivesportSlideView();
+  }
+
+  function openLivesportModal() {
+    buildLivesportDots();
+    currentLivesportSlide = 0;
+    updateLivesportSlideView();
+    livesportModal.classList.remove('hidden');
+    livesportModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLivesportModal() {
+    livesportModal.classList.add('hidden');
+    livesportModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function handleLivesportBackdropClick(e) {
+    if (e.target === livesportModal) {
+      closeLivesportModal();
+    }
+  }
+
+  /* ── AbooPay Carousel / Modal Logic ── */
+  const aboopaySlides = [
+    {
+      src: 'assets/aboopay/icon.jpg',
+      caption: 'AbooPay Brand Icon · 3D-айдентика и визуальный знак'
+    },
+    {
+      src: 'assets/aboopay/slide1.png',
+      caption: 'Реестр сотрудников и сводный ФОТ к выплате'
+    },
+    {
+      src: 'assets/aboopay/slide2.png',
+      caption: 'Интерактивные параметры расчёта, налоги и AbooAI аудит'
+    },
+    {
+      src: 'assets/aboopay/slide3.png',
+      caption: 'Встроенный ИИ-Консультант для проверки начислений и премий'
+    }
+  ];
+
+  let currentAbooPaySlide = 0;
+  const aboopayModal = document.getElementById('aboopay-modal');
+  const aboopayImg = document.getElementById('aboopay-slide-img');
+  const aboopayCaption = document.getElementById('aboopay-slide-caption');
+  const aboopayCounter = document.getElementById('aboopay-slide-counter');
+  const aboopayDots = document.getElementById('aboopay-dots');
+
+  function buildAbooPayDots() {
+    aboopayDots.innerHTML = '';
+    aboopaySlides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `modal-dot ${idx === currentAbooPaySlide ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Слайд ${idx + 1}`);
+      dot.onclick = (e) => {
+        e.stopPropagation();
+        goToAbooPaySlide(idx);
+      };
+      aboopayDots.appendChild(dot);
+    });
+  }
+
+  function updateAbooPaySlideView() {
+    aboopayImg.style.opacity = '0';
+    setTimeout(() => {
+      aboopayImg.src = aboopaySlides[currentAbooPaySlide].src;
+      aboopayCaption.textContent = aboopaySlides[currentAbooPaySlide].caption;
+      aboopayCounter.textContent = `${currentAbooPaySlide + 1} / ${aboopaySlides.length}`;
+      
+      const dots = aboopayDots.querySelectorAll('.modal-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentAbooPaySlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+      aboopayImg.style.opacity = '1';
+    }, 150);
+  }
+
+  function goToAbooPaySlide(idx) {
+    currentAbooPaySlide = idx;
+    updateAbooPaySlideView();
+  }
+
+  function nextAbooPaySlide(e) {
+    if (e) e.stopPropagation();
+    currentAbooPaySlide = (currentAbooPaySlide + 1) % aboopaySlides.length;
+    updateAbooPaySlideView();
+  }
+
+  function prevAbooPaySlide(e) {
+    if (e) e.stopPropagation();
+    currentAbooPaySlide = (currentAbooPaySlide - 1 + aboopaySlides.length) % aboopaySlides.length;
+    updateAbooPaySlideView();
+  }
+
+  function openAbooPayModal() {
+    buildAbooPayDots();
+    currentAbooPaySlide = 0;
+    updateAbooPaySlideView();
+    aboopayModal.classList.remove('hidden');
+    aboopayModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAbooPayModal() {
+    aboopayModal.classList.add('hidden');
+    aboopayModal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function handleAbooPayBackdropClick(e) {
+    if (e.target === aboopayModal) {
+      closeAbooPayModal();
+    }
+  }
+
+  // Keyboard navigation for slider & escape across modals
+  window.addEventListener('keydown', (e) => {
+    if (!livesportModal.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeLivesportModal();
+      if (e.key === 'ArrowRight') nextLivesportSlide();
+      if (e.key === 'ArrowLeft') prevLivesportSlide();
+    } else if (!aboopayModal.classList.contains('hidden')) {
+      if (e.key === 'Escape') closeAbooPayModal();
+      if (e.key === 'ArrowRight') nextAbooPaySlide();
+      if (e.key === 'ArrowLeft') prevAbooPaySlide();
+    }
+  });
+</script>
+</body>
+</html>
